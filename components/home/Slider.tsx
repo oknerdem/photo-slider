@@ -25,14 +25,12 @@ const Slider = () => {
       <MoveButton onClick={prevImg}>←</MoveButton>
       {Images.map((image, index) => {
         return (
-          <>
-            <SliderTable
-              key={image.id}
-              index={index}
-              current={current}
-              image={image}
-            />
-          </>
+          <SliderTable
+            key={image.id}
+            index={index}
+            current={current}
+            image={image}
+          />
         );
       })}
       <MoveButton onClick={nextImg}>→</MoveButton>

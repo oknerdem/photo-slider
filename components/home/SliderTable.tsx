@@ -4,6 +4,7 @@ import styles from '@/styles/Home.module.css';
 interface SliderTableProps {
   index: number;
   current: number;
+  key: any;
   image: {
     id: number;
     src: string;
@@ -11,12 +12,9 @@ interface SliderTableProps {
   };
 }
 
-const SliderTable = ({ index, current, image }: SliderTableProps) => {
+const SliderTable = ({ index, current, image, key }: SliderTableProps) => {
   return (
-    <div
-      className={index === current ? styles.slideActive : styles.slide}
-      key={image.id}
-    >
+    <div className={styles.slide} key={key}>
       {index === current && (
         <Image
           src={image.src}
