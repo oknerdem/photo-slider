@@ -1,5 +1,4 @@
-import { useState, useRef, useEffect } from 'react';
-import autoAnimate from '@formkit/auto-animate';
+import { useState } from 'react';
 import Images from '@/data/Data';
 import SliderTable from '@/components/home/SliderTable';
 import MoveButton from '@/components/MoveButton';
@@ -8,11 +7,6 @@ import styles from '@/styles/Home.module.css';
 const Slider = () => {
   const [current, setCurrent] = useState(0);
   const length = Images.length;
-  const parent = useRef(null);
-
-  useEffect(() => {
-    parent.current && autoAnimate(parent.current);
-  }, [parent]);
 
   const nextImg = () => {
     setCurrent(current === length - 1 ? 0 : current + 1);
