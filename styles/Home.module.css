@@ -3,7 +3,7 @@
 }
 
 .title {
-  @apply text-3xl font-extrabold border-b-4 border-pink-200 max-w-[54px] pb-2 w-full flex justify-center items-center text-pink-400;
+  @apply text-3xl font-extrabold border-b-4 border-rose-200 max-w-[54px] pb-2 w-full flex justify-center items-center text-rose-300;
 }
 
 .sliderMain {
@@ -11,11 +11,11 @@
 }
 
 .sliderImage {
-  @apply w-[35rem] h-[30rem] rounded-3xl shadow-2xl;
+  @apply w-[35rem] h-[30rem] rounded-3xl shadow-2xl object-cover;
 }
 
 .sliderButton {
-  @apply bg-white text-black font-bold rounded-full py-2 px-2 
+  @apply bg-white text-rose-600 font-bold rounded-full py-2 px-2 
   shadow-lg w-10 mx-10 duration-300 border-2 border-gray-200;
 }
 
