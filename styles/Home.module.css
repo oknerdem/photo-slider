@@ -3,13 +3,26 @@
 }
 
 .title {
-  @apply text-3xl font-extrabold border-b-4 border-yellow-500 max-w-[54px] pb-2 w-full flex justify-center text-black dark:text-white;
+  @apply text-3xl font-extrabold border-b-4 border-pink-200 max-w-[54px] pb-2 w-full flex justify-center items-center text-pink-400;
 }
 
 .sliderMain {
-  @apply mt-10 flex justify-center items-center gap-10;
+  @apply mt-2 flex justify-center items-center;
+}
+
+.sliderImage {
+  @apply w-[35rem] h-[30rem] rounded-3xl shadow-2xl;
 }
 
 .sliderButton {
-  @apply bg-white text-black font-bold py-2 px-3 rounded-full hover:opacity-70 duration-150 active:scale-110 shadow border-gray-300 border text-lg hover:translate-x-3;
+  @apply bg-white text-black font-bold rounded-full py-2 px-2 
+  shadow-lg w-10 mx-10 duration-300 border-2 border-gray-200;
+}
+
+.sliderButton:hover {
+  @apply bg-pink-300 text-white;
+}
+
+.sliderButton:active {
+  @apply bg-pink-400 text-white;
 }

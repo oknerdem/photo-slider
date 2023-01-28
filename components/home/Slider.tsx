@@ -1,12 +1,47 @@
-import Image from 'next/image';
+import { useState, useRef, useEffect } from 'react';
+import autoAnimate from '@formkit/auto-animate';
+import Images from '@/data/Data';
+import SliderTable from '@/components/home/SliderTable';
+import MoveButton from '@/components/MoveButton';
 import styles from '@/styles/Home.module.css';
 
 const Slider = () => {
+  const [current, setCurrent] = useState(0);
+  const length = Images.length;
+  const parent = useRef(null);
+
+  useEffect(() => {
+    parent.current && autoAnimate(parent.current);
+  }, [parent]);
+
+  const nextImg = () => {
+    setCurrent(current === length - 1 ? 0 : current + 1);
+  };
+
+  const prevImg = () => {
+    setCurrent(current === 0 ? length - 1 : current - 1);
+  };
+
+  if (!Array.isArray(Images) || Images.length <= 0) {
+    return null;
+  }
+
   return (
     <section className={styles.sliderMain}>
-      <button className={styles.sliderButton}>←</button>
-      <Image src="/icon.png" width={320} height={230} alt="icon" />
-      <button className={styles.sliderButton}>→</button>
+      <MoveButton onClick={prevImg}>←</MoveButton>
+      {Images.map((image, index) => {
+        return (
+          <>
+            <SliderTable
+              key={image.id}
+              index={index}
+              current={current}
+              image={image}
+            />
+          </>
+        );
+      })}
+      <MoveButton onClick={nextImg}>→</MoveButton>
     </section>
   );
 };
