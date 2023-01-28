@@ -17,5 +17,6 @@ html {
   html,
   body {
     color-scheme: dark;
+    @apply bg-neutral-800;
   }
 }
