@@ -9,14 +9,9 @@ const Slider = () => {
   return (
     <div className={styles.sliderMain}>
       <Swiper
-        modules={[Navigation]}
-        navigation={{
-          nextEl: '.swiper-button-next',
-          prevEl: '.swiper-button-prev',
-        }}
-        spaceBetween={20}
         slidesPerView={1}
         loop={true}
+        spaceBetween={10}
         className={styles.sliderSwiper}
       >
         {Images.map(image => {
