@@ -1,40 +1,37 @@
-import { useState } from 'react';
+import { Navigation } from 'swiper';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import Image from 'next/image';
 import Images from '@/data/Data';
-import SliderTable from '@/components/home/SliderTable';
-import MoveButton from '@/components/MoveButton';
 import styles from '@/styles/Home.module.css';
+import 'swiper/css';
 
 const Slider = () => {
-  const [current, setCurrent] = useState(0);
-  const length = Images.length;
-
-  const nextImg = () => {
-    setCurrent(current === length - 1 ? 0 : current + 1);
-  };
-
-  const prevImg = () => {
-    setCurrent(current === 0 ? length - 1 : current - 1);
-  };
-
-  if (!Array.isArray(Images) || Images.length <= 0) {
-    return null;
-  }
-
   return (
-    <section className={styles.sliderMain}>
-      <MoveButton onClick={prevImg}>←</MoveButton>
-      {Images.map((image, index) => {
+    <Swiper
+      modules={[Navigation]}
+      navigation={{
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      }}
+      spaceBetween={20}
+      slidesPerView={1}
+      loop={true}
+      className="w-full mx-auto items-center justify-center self-center content-center max-w-[34rem]"
+    >
+      {Images.map(image => {
         return (
-          <SliderTable
-            key={image.id}
-            index={index}
-            current={current}
-            image={image}
-          />
+          <SwiperSlide key={image.id}>
+            <Image
+              src={image.src}
+              width={320}
+              height={230}
+              alt={image.alt}
+              className={styles.sliderImage}
+            />
+          </SwiperSlide>
         );
       })}
-      <MoveButton onClick={nextImg}>→</MoveButton>
-    </section>
+    </Swiper>
   );
 };
 
