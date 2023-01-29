@@ -2,4 +2,4 @@
 
 ###### _Built with_ Next.js & TailwindCSS & AutoAnimate.
 
-![SliderApp Screenshot](./public/slider-app.png)
+![Slider App Screenshot](./public/slider-app.png)
