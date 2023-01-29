@@ -1,4 +1,3 @@
-import { Navigation } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import Image from 'next/image';
 import Images from '@/data/Data';
