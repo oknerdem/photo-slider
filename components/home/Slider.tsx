@@ -1,15 +1,19 @@
 import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation } from 'swiper';
 import Image from 'next/image';
 import Images from '@/data/Data';
 import styles from '@/styles/Home.module.css';
 import 'swiper/css';
+import 'swiper/css/navigation';
 
 const Slider = () => {
   return (
     <div className={styles.sliderMain}>
       <Swiper
+        modules={[Navigation]}
         slidesPerView={1}
-        loop={true}
+        navigation
+        loop
         spaceBetween={10}
         className={styles.sliderSwiper}
       >

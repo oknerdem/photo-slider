@@ -20,3 +20,8 @@ html {
     @apply bg-neutral-800;
   }
 }
+
+.swiper-button-next,
+.swiper-button-prev {
+  @apply text-neutral-100 opacity-60 !important;
+}
