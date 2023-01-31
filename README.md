@@ -1,4 +1,4 @@
-##### <sup>🌿</sup> **Photo Slider App** <sub>🌿</sub>
+##### <sup>🍇</sup> **Photo Slider App** <sub>🍇</sub>
 
 ###### _Built with_ Next.js & TailwindCSS & AutoAnimate.
 
